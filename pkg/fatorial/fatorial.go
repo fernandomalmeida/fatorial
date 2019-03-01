@@ -2,11 +2,14 @@ package fatorial
 
 import (
 	"errors"
+    "fmt"
 )
 
+const limiteSuperior = 20
+
 func Fatorial(n uint64) (uint64, error) {
-	if n > 20 {
-		return 0, errors.New("Não pode calcular o fatorial de um número maior que 20")
+	if n > limiteSuperior {
+		return 0, errors.New(fmt.Sprintf("Não pode calcular o fatorial de um número maior que %d", limiteSuperior))
 	}
 	if n == 0 || n == 1 {
 		return 1, nil
